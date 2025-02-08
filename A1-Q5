@@ -1,1 +1,37 @@
+#include<iostream>
+using namespace std;
+void rotate_90_degree(int n,int matrix[][100],int rotatedmatrix[][100])
+{
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            rotatedmatrix[j][n-1-i]=matrix[i][j];
+        }
+    }
+}
+int main(){
+    int n;
+    cout<<"enter the size of the matrix:";
+    cin>>n;
+
+    int matrix[100][100];
+    int rotatedmatrix[100][100];
+    cout<<"Enter the image elements:"<<endl;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>matrix[i][j];
+        }
+    }
+
+    rotate_90_degree(n,matrix,rotatedmatrix);
+
+    cout<<"rotated image:"<<endl;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cout<<rotatedmatrix[i][j]<<" ";
+
+        }
+        cout<<endl;
+    }
+    return 0;
+}
 
