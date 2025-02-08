@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+    int arr[n]; 
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    cout << "The elements in the array are: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << "\n Array in the reverse order: ";
+    for (int i = n-1; i >=0; i--) {
+        cout << arr[i] << " ";
+    }
+    
+    int maxelement=arr[0],second_largest=-1;
+    int minelement=arr[0],second_smallest=arr[1];
+    for (int i = 1; i < n; i++){
+        if(arr[i]>maxelement){
+            second_largest=maxelement;
+            maxelement=arr[i];
+        }
+        if(arr[i]<minelement){
+            second_smallest=minelement;
+            minelement=arr[i];
+            if (arr[i] > minelement && arr[i] < second_smallest) {
+                second_smallest = arr[i];
+            }
+        }
+    }
+    cout << "second largest element: " << second_largest << endl;
+    cout << "second smallest element: " << second_smallest << endl;
+    return 0;
+
+    cout << endl;
+    return 0;
+}
